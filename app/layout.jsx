@@ -1,4 +1,5 @@
 import "./globals.css"
+import "../styles/moive_container.css"
 import { Montserrat } from "next/font/google"
 
 const montserrat = Montserrat({
@@ -15,8 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <nav>Logo</nav>
+      <body className={`${montserrat.className} body_container`}>
         {children}
       </body>
     </html>
