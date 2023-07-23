@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.className} body_container`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
