@@ -18,7 +18,6 @@ export default async function MovieDetails({ params }) {
     `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`
   )
   const res = await data.json()
-  console.log(res)
 
   const genreNames = res.genres.map(genre => genre.name)
   const genresWithCommas = genreNames.join(", ")
@@ -45,6 +44,7 @@ export default async function MovieDetails({ params }) {
           height={1000}
           width={1000}
           priority
+          alt="every movie backdrop image"
         />
         <h1 className="movie_des">Movie Description:</h1>
         <p>{res.overview}</p>
