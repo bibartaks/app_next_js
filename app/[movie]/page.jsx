@@ -19,7 +19,7 @@ export default async function MovieDetails({ params }) {
   )
   const res = await data.json()
 
-  const genreNames = res.genres.map(genre => genre.name)
+  const genreNames = res.genres ? res.genres.map(genre => genre.name) : []
   const genresWithCommas = genreNames.join(", ")
 
   return (
