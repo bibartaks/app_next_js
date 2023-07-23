@@ -25,9 +25,10 @@ export default async function MovieDetails({ params }) {
   const originalLanguage = res.original_language
     ? res.original_language.toUpperCase()
     : ""
-
-  // Check if res.budget is defined before using toLocaleString
   const budget = res.budget ? res.budget.toLocaleString() : ""
+
+  // Check if res.revenue is defined before using toLocaleString
+  const revenue = res.revenue ? res.revenue.toLocaleString() : ""
 
   return (
     <div>
@@ -36,11 +37,11 @@ export default async function MovieDetails({ params }) {
         <h1>Language: {originalLanguage}</h1>
         <h1>{res.release_date}</h1>
         <h2>Runtime: {res.runtime} minutes</h2>
-        {/* Use the variable budget */}
         <h3>Movie Budget: ${budget}</h3>
         <h1>Genres: {genresWithCommas}</h1>
         <h1>Popularity: {res.popularity}</h1>
-        <h1>Revenue: ${res.revenue.toLocaleString()}</h1>
+        {/* Use the variable revenue */}
+        <h1>Revenue: ${revenue}</h1>
         <br />
         <h2 className="movie_status">{res.status}</h2>
         <Image
