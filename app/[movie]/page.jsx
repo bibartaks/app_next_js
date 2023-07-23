@@ -22,20 +22,22 @@ export default async function MovieDetails({ params }) {
   const genreNames = res.genres ? res.genres.map(genre => genre.name) : []
   const genresWithCommas = genreNames.join(", ")
 
-  // Check if res.original_language is defined before using toUpperCase
   const originalLanguage = res.original_language
     ? res.original_language.toUpperCase()
     : ""
+
+  // Check if res.budget is defined before using toLocaleString
+  const budget = res.budget ? res.budget.toLocaleString() : ""
 
   return (
     <div>
       <div>
         <h2 className="movie-detail_font">{res.title}</h2>
-        {/* Use the variable originalLanguage */}
         <h1>Language: {originalLanguage}</h1>
         <h1>{res.release_date}</h1>
         <h2>Runtime: {res.runtime} minutes</h2>
-        <h3>Movie Budget: ${res.budget.toLocaleString()}</h3>
+        {/* Use the variable budget */}
+        <h3>Movie Budget: ${budget}</h3>
         <h1>Genres: {genresWithCommas}</h1>
         <h1>Popularity: {res.popularity}</h1>
         <h1>Revenue: ${res.revenue.toLocaleString()}</h1>
