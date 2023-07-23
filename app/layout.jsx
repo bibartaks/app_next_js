@@ -1,6 +1,7 @@
 import "./globals.css"
 import "../styles/moive_container.css"
 import { Montserrat } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
